@@ -68,5 +68,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // SDK載入
-    implementation(files("libs/PocketComposeComponent-release.aar"))
+    implementation(files("libs/pocket_compose_ui_v1.0.0.aar"))
 }

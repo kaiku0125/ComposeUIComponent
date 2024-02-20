@@ -132,16 +132,3 @@ val color_flash_delegate_buy = Color(0xFFE60039) // Red
 val color_flash_delegate_sell = Color(0xFF39B54A) // Green
 val color_flash_normal_sell = Color(0xFF326A3A) // Dark Green
 val color_flash_disabled = Color(0xFF9E9E9F) // Gray
-
-
-// Mission Activity
-val color_exchange_bg = Color(0xFFF5ECFF)
-val color_raffle_bg = Color(0xFFF1F3FF)
-val color_discount_bg = Color(0xFFFFF8E5)
-val color_gift_bg = Color(0xFFF5B6C0)
-
-val colorPrimary = color_primary
-val colorOnPrimary = Color(0xFFFFFFFF) // White
-val colorSecondary = color_5856d6
-val colorOnSecondary = Color(0x00000000) // Transparent Black
-val colorBackground = color_252525

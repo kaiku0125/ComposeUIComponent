@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -12,6 +14,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        version = "v1.0.0"
     }
 
     buildTypes {
@@ -36,6 +40,17 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
+    // 设置 AAR 文件名称
+    libraryVariants.all {
+        val versionName = project.version.toString()
+        val mOutputFileName = "pocket_compose_ui_$versionName.aar"
+        outputs.configureEach {
+            if (name.contains("release")) {
+                (this as BaseVariantOutputImpl).outputFileName = mOutputFileName
+            }
+        }
+    }
 }
 
 dependencies {
@@ -53,6 +68,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2024.01.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

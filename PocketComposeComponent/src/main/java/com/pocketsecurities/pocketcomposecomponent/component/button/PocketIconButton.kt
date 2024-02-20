@@ -38,7 +38,6 @@ import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConf
  * @param iconSize Icon大小
  * @param onIconClick Icon點擊事件
  */
-
 @Composable
 fun PocketIconButton(
     modifier: Modifier = Modifier,
@@ -70,7 +69,7 @@ fun PocketIconButton(
 }
 
 @Composable
-fun SimpleIconButton(
+fun PocketIconButton(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier,
     imageVector: ImageVector,
@@ -143,7 +142,7 @@ fun SimpleRotationIconButton(
             onIconClick = onIconClick
         )
     } else {
-        SimpleIconButton(
+        PocketIconButton(
             modifier = modifier
                 .size(24.dp)
                 .graphicsLayer {
@@ -160,8 +159,8 @@ fun SimpleRotationIconButton(
 
 @Preview
 @Composable
-fun PreviewSimpleIconButton() {
-    SimpleIconButton(
+fun PocketIconButtonPreview() {
+    PocketIconButton(
         modifier = Modifier.size(24.dp),
         imageVector = Icons.Default.KeyboardArrowDown,
         iconSize = 17.dp,

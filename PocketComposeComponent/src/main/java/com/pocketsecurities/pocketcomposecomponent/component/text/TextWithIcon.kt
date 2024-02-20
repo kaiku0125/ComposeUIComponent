@@ -22,7 +22,7 @@ import com.pocketsecurities.pocketcomposecomponent.component.button.PocketIconBu
 import com.pocketsecurities.pocketcomposecomponent.extension.ClickableConfig
 import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConfig
 
-data class TextWithIconViewState(
+data class TextWithIconConfig(
     @DrawableRes val drawableRes: Int? = null,
     val drawableSize: Dp = 17.dp,
     val drawableColor: Color = Color.Unspecified,
@@ -35,20 +35,20 @@ data class TextWithIconViewState(
 /**
  * @sample TextWithIcon Text 與 Icon 組合元件
  *
- * @param topViewState 加入上方icon
- * @param startViewState 加入起始icon
- * @param bottomViewState 加入底部icon
- * @param endViewState 加入尾部icon
+ * @param topConfig 加入上方icon
+ * @param startConfig 加入起始icon
+ * @param bottomConfig 加入底部icon
+ * @param endConfig 加入尾部icon
  * @param content 放入中間的text
  */
 
 @Composable
 fun TextWithIcon(
     modifier: Modifier = Modifier,
-    topViewState: TextWithIconViewState? = null,
-    startViewState: TextWithIconViewState? = null,
-    bottomViewState: TextWithIconViewState? = null,
-    endViewState: TextWithIconViewState? = null,
+    topConfig: TextWithIconConfig? = null,
+    startConfig: TextWithIconConfig? = null,
+    bottomConfig: TextWithIconConfig? = null,
+    endConfig: TextWithIconConfig? = null,
     content: @Composable () -> Unit,
 ) {
 
@@ -58,17 +58,17 @@ fun TextWithIcon(
         val (refImgStart, refImgTop, refImgBottom, refImgEnd, refContent) = createRefs()
         Box(
             modifier = Modifier.constrainAs(refContent) {
-                top.linkTo(topViewState?.drawableRes?.let { refImgTop.bottom } ?: parent.top)
-                bottom.linkTo(bottomViewState?.drawableRes?.let { refImgBottom.top } ?: parent.bottom)
-                start.linkTo(startViewState?.drawableRes?.let { refImgStart.end } ?: parent.start)
-                end.linkTo(endViewState?.drawableRes?.let { refImgEnd.start } ?: parent.end)
+                top.linkTo(topConfig?.drawableRes?.let { refImgTop.bottom } ?: parent.top)
+                bottom.linkTo(bottomConfig?.drawableRes?.let { refImgBottom.top } ?: parent.bottom)
+                start.linkTo(startConfig?.drawableRes?.let { refImgStart.end } ?: parent.start)
+                end.linkTo(endConfig?.drawableRes?.let { refImgEnd.start } ?: parent.end)
             },
             contentAlignment = Alignment.Center
         ) {
             content()
         }
 
-        topViewState?.let {
+        topConfig?.let {
             IconContent(
                 modifier = Modifier
                     .constrainAs(refImgTop) {
@@ -81,7 +81,7 @@ fun TextWithIcon(
             )
         }
 
-        startViewState?.let {
+        startConfig?.let {
             IconContent(
                 modifier = Modifier
                     .constrainAs(refImgStart) {
@@ -94,7 +94,7 @@ fun TextWithIcon(
             )
         }
 
-        bottomViewState?.let {
+        bottomConfig?.let {
             IconContent(
                 modifier = Modifier
                     .constrainAs(refImgBottom) {
@@ -107,7 +107,7 @@ fun TextWithIcon(
             )
         }
 
-        endViewState?.let {
+        endConfig?.let {
             IconContent(
                 modifier = Modifier
                     .constrainAs(refImgEnd) {
@@ -125,7 +125,7 @@ fun TextWithIcon(
 @Composable
 private fun IconContent(
     modifier: Modifier,
-    vs: TextWithIconViewState
+    vs: TextWithIconConfig
 ) {
     if (vs.onClick != null) {
         vs.drawableRes?.let {
@@ -166,10 +166,10 @@ private fun IconContent(
 @Composable
 private fun TextViewIconPreview() {
     TextWithIcon(
-        topViewState = TextWithIconViewState(R.drawable.preview_ic_information),
-        startViewState = TextWithIconViewState(R.drawable.preview_ic_information),
-        bottomViewState = TextWithIconViewState(R.drawable.preview_ic_information),
-        endViewState = TextWithIconViewState(R.drawable.preview_ic_information),
+        topConfig = TextWithIconConfig(R.drawable.preview_ic_information),
+        startConfig = TextWithIconConfig(R.drawable.preview_ic_information),
+        bottomConfig = TextWithIconConfig(R.drawable.preview_ic_information),
+        endConfig = TextWithIconConfig(R.drawable.preview_ic_information),
         content = {
             PocketText(
                 textModifier = Modifier.padding(horizontal = 3.dp),

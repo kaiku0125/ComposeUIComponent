@@ -159,10 +159,11 @@ fun SimpleRotationIconButton(
 
 @Preview
 @Composable
-fun PocketIconButtonPreview() {
+private fun PocketIconButtonPreview() {
     PocketIconButton(
         modifier = Modifier.size(24.dp),
         imageVector = Icons.Default.KeyboardArrowDown,
+        tint = Color.White,
         iconSize = 17.dp,
         onIconClick = {
 

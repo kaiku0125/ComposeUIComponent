@@ -36,6 +36,8 @@ data class PocketTopBarConfig(
     val needInformation: Boolean = false,
     val textConfig: PocketTextConfig = PocketTextConfig()
 )
+
+
 /**
  * @sample ScaffoldTopBarComponent
  *

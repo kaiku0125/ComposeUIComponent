@@ -14,14 +14,14 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 
 /**
- * @sample SimpleTextWithHint
+ * @sample PocketTextWithHint
  *
  * @param contentConfig 主內容文檔設定
  * @param hintConfig 提示文檔設定
  * @param paddingToContent 設定內容與提示文字之間的間距
  */
 @Composable
-fun SimpleTextWithHint(
+fun PocketTextWithHint(
     modifier: Modifier = Modifier,
     contentConfig: PocketTextConfig = PocketTextConfig(
         value = "",
@@ -78,8 +78,8 @@ fun SimpleTextWithHint(
 
 @Preview
 @Composable
-private fun SimpleTextWithHintPreview() {
-    SimpleTextWithHint(
+private fun PocketTextWithHintPreview() {
+    PocketTextWithHint(
         modifier = Modifier,
         contentConfig = PocketTextConfig(
             value = "內容",

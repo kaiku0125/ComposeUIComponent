@@ -2,6 +2,7 @@ package com.pocketsecurities.composeuidemo
 
 import android.app.Application
 import com.pocketsecurities.pocketcomposecomponent.di.getComposeImageLoaderModule
+import com.pocketsecurities.pocketcomposecomponent.di.getDrawableProviderModule
 import org.koin.android.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
@@ -16,7 +17,8 @@ class ComposeUIDemoApplication : Application() {
             androidContext(this@ComposeUIDemoApplication)
             loadKoinModules(
                 listOf(
-                    getComposeImageLoaderModule(BuildConfig.DEBUG)
+                    getComposeImageLoaderModule(BuildConfig.DEBUG),
+                    getDrawableProviderModule(isTw = true)
                 )
             )
         }

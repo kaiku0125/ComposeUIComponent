@@ -83,4 +83,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // 第三方 library
+    implementation("org.burnoutcrew.composereorderable:reorderable:0.9.6")
 }

@@ -1,4 +1,4 @@
-package com.pocketsecurities.pocketcomposecomponent.utils
+package com.pocketsecurities.pocketcomposecomponent.model
 
 import android.content.Context
 import coil.ImageLoader

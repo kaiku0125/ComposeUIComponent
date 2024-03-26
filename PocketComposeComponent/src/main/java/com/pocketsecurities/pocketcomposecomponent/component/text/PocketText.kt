@@ -17,8 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.sp
 import com.pocketsecurities.pocketcomposecomponent.color_717071
 import com.pocketsecurities.pocketcomposecomponent.extension.ClickableConfig
 import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConfig
@@ -85,6 +87,19 @@ fun PocketText(
             )
         }
     }
+}
+
+@Composable
+fun SimpleText(
+    modifier: Modifier = Modifier,
+    textModifier: Modifier = Modifier,
+    text: String,
+) {
+    PocketText(
+        modifier = modifier,
+        textModifier = textModifier,
+        config = PocketTextConfig(value = text)
+    )
 }
 
 /**

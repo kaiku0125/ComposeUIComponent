@@ -23,6 +23,7 @@ import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
 import com.pocketsecurities.pocketcomposecomponent.R
 import com.pocketsecurities.pocketcomposecomponent.color_333333
+import com.pocketsecurities.pocketcomposecomponent.component.button.PocketPrimaryButton
 import com.pocketsecurities.pocketcomposecomponent.component.shadow.WithShadow
 import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketAppBarWithBackNavigation
 

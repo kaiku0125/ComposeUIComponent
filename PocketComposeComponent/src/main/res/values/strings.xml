@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="tab_spot">現貨</string>
+    <string name="tab_perpetual">合約</string>
+    <string name="tab_grid">網格機器人</string>
+
+</resources>

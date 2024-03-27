@@ -17,10 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.sp
 import com.pocketsecurities.pocketcomposecomponent.color_717071
 import com.pocketsecurities.pocketcomposecomponent.extension.ClickableConfig
 import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConfig
@@ -144,14 +142,14 @@ fun AnimatedPocketText(
 }
 
 /**
- * @sample SimpleTextWithClickEffect 擁有點擊事件的 SimpleText
+ * @sample PocketTextWithClickEffect 擁有點擊事件的 SimpleText
  *
  * @param config PocketTextConfig
  * @param clickableConfig clickable設定
  * @param onClick export 點擊事件
  */
 @Composable
-fun SimpleTextWithClickEffect(
+fun PocketTextWithClickEffect(
     modifier: Modifier = Modifier,
     textModifier: Modifier = Modifier,
     config: PocketTextConfig = PocketTextConfig(),

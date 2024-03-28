@@ -126,25 +126,3 @@ fun HorizontalProgressComponent(
         hoverContent.invoke()
     }
 }
-
-@Preview
-@Composable
-private fun HorizontalProgressComponentPreview() {
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp)
-            .background(color_333333),
-        contentAlignment = Alignment.Center
-    ) {
-        HorizontalProgressComponent(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(20.dp)
-                .padding(horizontal = 10.dp),
-            percentage = 0.87f
-        )
-    }
-
-}

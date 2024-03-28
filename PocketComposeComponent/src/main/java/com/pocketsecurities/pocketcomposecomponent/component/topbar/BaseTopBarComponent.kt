@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -23,7 +22,6 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pocketsecurities.pocketcomposecomponent.R
@@ -39,7 +37,7 @@ data class PocketTopBarConfig(
 
 
 /**
- * @sample ScaffoldTopBarComponent
+ * @sample BaseTopBarComponent
  *
  * @param config app bar 設定(預設為文字, 資訊icon)
  * @param onInfoClick export 資訊icon點擊事件
@@ -51,7 +49,7 @@ data class PocketTopBarConfig(
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScaffoldTopBarComponent(
+fun BaseTopBarComponent(
     modifier: Modifier = Modifier,
     config: PocketTopBarConfig = PocketTopBarConfig(),
     onInfoClick: (() -> Unit)? = null,
@@ -131,7 +129,7 @@ fun PocketAppBarWithBackNavigation(
     onBackClick: () -> Unit = {},
     background: Color = MaterialTheme.colorScheme.background
 ) {
-    ScaffoldTopBarComponent(
+    BaseTopBarComponent(
         modifier = modifier,
         config = PocketTopBarConfig(
             needInformation = onInfoClick != null,
@@ -146,35 +144,6 @@ fun PocketAppBarWithBackNavigation(
         background = background,
         onInfoClick = onInfoClick,
         onNavigationClick = onBackClick
-    )
-}
-
-// ------------------------------ Preview ------------------------------
-@Preview
-@Composable
-private fun ScaffoldTopBarComponentPreview() {
-    ScaffoldTopBarComponent(
-        modifier = Modifier.height(100.dp),
-        config = PocketTopBarConfig(
-            needInformation = true,
-            textConfig = PocketTextConfig(
-                value = "標題",
-                style = TextStyle(
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight(500)
-                )
-            )
-        )
-    )
-}
-
-@Preview
-@Composable
-private fun PocketAppBarWithBackNavigationPreview() {
-    PocketAppBarWithBackNavigation(
-        title = "標題",
-        onInfoClick = {},
-        onBackClick = {}
     )
 }
 

@@ -1,4 +1,4 @@
-package com.pocketsecurities.composeuidemo.preview
+package com.pocketsecurities.composeuidemo.preview.topbar
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
@@ -10,17 +10,18 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
+import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.pocketcomposecomponent.component.topbar.BaseTopBarComponent
 import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketAppBarWithBackNavigation
-import com.pocketsecurities.pocketcomposecomponent.component.topbar.ScaffoldTopBarComponent
 import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketTopBarConfig
 
 @Preview
 @Composable
-private fun PocketScaffoldTopBarComponentPreview() {
-    ComposeUIDemoTheme {
-        ScaffoldTopBarComponent(
-            modifier = Modifier.height(50.dp),
+private fun BaseTopBarComponentPreview() {
+    DarkComposeUIDemoTheme {
+        BaseTopBarComponent(
+            modifier = Modifier.height(100.dp),
             config = PocketTopBarConfig(
                 needInformation = true,
                 textConfig = PocketTextConfig(

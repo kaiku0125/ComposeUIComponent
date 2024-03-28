@@ -197,21 +197,3 @@ private fun RowScope.NegativeButton(
         )
     }
 }
-
-
-@Preview
-@Composable
-private fun NumberPickerDialogPreview() {
-    NumberPickerDialog(
-        state = 0,
-        onValueChanged = {
-
-        },
-        onConfirmed = {
-
-        },
-        onDismiss = {
-
-        }
-    )
-}

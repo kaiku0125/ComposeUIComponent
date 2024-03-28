@@ -153,34 +153,4 @@ fun PocketSwitch(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PocketSwitchPreview() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.surface),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        PocketSwitch(
-            checked = false,
-            size = 100.dp,
-        ) {
-
-        }
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        PocketSwitch(
-            checked = false,
-            size = 35.dp,
-            padding = 3.dp
-        ) {
-
-        }
-    }
-}
-
 

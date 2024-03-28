@@ -4,9 +4,11 @@ package com.pocketsecurities.pocketcomposecomponent.component.radio
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -25,56 +27,36 @@ import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConf
 @Composable
 fun TrailingRadioSelectedComponent(
     modifier: Modifier = Modifier,
-    textConfig: PocketTextConfig = PocketTextConfig(),
     isChecked: Boolean,
-    background : Color = color_333333,
+    isEnabled: Boolean = true,
+    background: Color = MaterialTheme.colorScheme.background,
     horizontalPadding: Dp = 16.dp,
-    onFieldClick: () -> Unit
+    clickableConfig: ClickableConfig = ClickableConfig(),
+    onFieldClick: () -> Unit,
+    content: @Composable RowScope.() -> Unit
 ) {
     Row(
         modifier = modifier
-            .fillMaxWidth()
             .background(background)
             .clickableEffectConfig(
-                config = ClickableConfig(
-                    needRipple = false
-                ),
+                config = clickableConfig,
                 onClick = {
-                    onFieldClick.invoke()
+                    if (isEnabled) {
+                        onFieldClick.invoke()
+                    }
                 }
             )
             .padding(horizontal = horizontalPadding),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        PocketText(
-            config = textConfig
-        )
+        content.invoke(this)
 
         PocketRadioIconComponent(
+            modifier = Modifier.padding(top = 1.dp), // 不確定為何會有1.dp的跑版
             isChecked = isChecked,
-            isEnabled = true,
+            isEnabled = isEnabled,
             iconSize = 24.dp
         )
     }
-}
-
-@Preview
-@Composable
-private fun TrailingRadioSelectedComponentPreview() {
-
-    val isChecked = remember { mutableStateOf(true) }
-
-    TrailingRadioSelectedComponent(
-        modifier = Modifier.height(45.dp),
-        textConfig = PocketTextConfig(
-            value = "喝了搖曳",
-            alignment = Alignment.CenterStart
-        ),
-        isChecked = isChecked.value,
-        onFieldClick = {
-            isChecked.value = isChecked.value.not()
-        }
-    )
-
 }

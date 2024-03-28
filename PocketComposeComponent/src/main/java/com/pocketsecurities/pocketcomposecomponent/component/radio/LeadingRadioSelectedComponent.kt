@@ -4,41 +4,47 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.pocketsecurities.pocketcomposecomponent.color_333333
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
 import com.pocketsecurities.pocketcomposecomponent.extension.ClickableConfig
 import com.pocketsecurities.pocketcomposecomponent.extension.clickableEffectConfig
 
+/**
+ * @sample LeadingRadioSelectedComponent 帶有前導radio的選擇元件
+ *
+ * @param isChecked 是否勾選
+ * @param isEnabled 是否可被選擇
+ * @param background 背景顏色
+ * @param horizontalPadding 水平padding
+ * @param paddingToText radio元件與顯示內容間距
+ * @param clickableConfig 點擊效果設定
+ * @param onFieldClick 區域被點擊
+ * @param content 顯示內容
+ */
 @Composable
 fun LeadingRadioSelectedComponent(
     modifier: Modifier = Modifier,
     isChecked: Boolean = false,
     isEnabled: Boolean,
+    background: Color = MaterialTheme.colorScheme.background,
     horizontalPadding: Dp = 16.dp,
+    paddingToText: Dp = 5.dp,
+    clickableConfig: ClickableConfig = ClickableConfig(),
     onFieldClick : () -> Unit,
     content: @Composable RowScope.() -> Unit
 ) {
     Row(
         modifier = modifier
-            .fillMaxWidth()
-            .background(color_333333)
+            .background(background)
             .clickableEffectConfig(
-                config = ClickableConfig(
-                    needHaptic = false
-                ),
+                config = clickableConfig,
                 onClick = {
                     if (isEnabled) {
                         onFieldClick.invoke()
@@ -55,31 +61,9 @@ fun LeadingRadioSelectedComponent(
             iconSize = 24.dp
         )
 
-        Spacer(modifier = Modifier.width(5.dp))
+        Spacer(modifier = Modifier.width(paddingToText))
 
-        content()
+        content.invoke(this)
     }
 }
 
-@Preview
-@Composable
-private fun LeadingRadioSelectedComponentPreview(){
-
-    val isChecked = remember { mutableStateOf(true) }
-
-    LeadingRadioSelectedComponent(
-        modifier = Modifier.height(45.dp),
-        isChecked = isChecked.value,
-        isEnabled = true,
-        onFieldClick = {
-            isChecked.value = isChecked.value.not()
-        },
-        content = {
-            PocketText(
-                config = PocketTextConfig(
-                    value = "GoodTiming郭台銘"
-                )
-            )
-        }
-    )
-}

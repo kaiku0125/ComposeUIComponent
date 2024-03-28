@@ -161,23 +161,3 @@ private fun IconContent(
         }
     }
 }
-
-@Preview
-@Composable
-private fun TextViewIconPreview() {
-    TextWithIcon(
-        topConfig = TextWithIconConfig(R.drawable.preview_ic_information),
-        startConfig = TextWithIconConfig(R.drawable.preview_ic_information),
-        bottomConfig = TextWithIconConfig(R.drawable.preview_ic_information),
-        endConfig = TextWithIconConfig(R.drawable.preview_ic_information),
-        content = {
-            PocketText(
-                textModifier = Modifier.padding(horizontal = 3.dp),
-                config = PocketTextConfig(
-                    value = "title"
-                )
-            )
-        }
-    )
-}
-

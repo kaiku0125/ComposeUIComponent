@@ -46,7 +46,7 @@ data class BottomSheetSceneConfig(
 
 
 /**
- *  @sample BottomSheetSceneComponent
+ *  @sample BottomSheetSceneComponent 帶有標題與關閉元件的bottom sheet
  *
  *  @param config bottom sheet的設定檔
  *  @param content compose內容
@@ -102,31 +102,3 @@ fun BottomSheetSceneComponent(
 
     }
 }
-
-@Preview
-@Composable
-private fun BottomSheetSceneComponentPreview() {
-    BottomSheetSceneComponent(
-        config = BottomSheetSceneConfig(
-            titleConfig = PocketTextConfig(
-                value = "口袋 x MOMO 交易滿額禮",
-                textColor = Color.White
-            ),
-            screenRatio = 0.2f
-        ),
-        content = {
-            PocketText(
-                modifier = Modifier.padding(horizontal = 20.dp),
-                config = PocketTextConfig(
-                    value = "活動時間：2024/3/1~5/31\n" +
-                            "活動說明：依登記當月起計算，次月交易金額歸零重新計算，僅需登記一次即可",
-                    maxLines = 3
-                )
-            )
-        },
-        onDismiss = {
-
-        }
-    )
-}
-

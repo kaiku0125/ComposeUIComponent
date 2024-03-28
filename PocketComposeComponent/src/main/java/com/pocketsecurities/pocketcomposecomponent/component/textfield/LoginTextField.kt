@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Divider
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -23,18 +22,38 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.pocketcomposecomponent.color_414141
 import com.pocketsecurities.pocketcomposecomponent.component.button.PocketIconButton
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
-import com.pocketsecurities.pocketcomposecomponent.component.textfield.data.LoginTextFieldConfig
 import com.pocketsecurities.pocketcomposecomponent.component.textfield.data.PassWordConfig
 import com.pocketsecurities.pocketcomposecomponent.component.textfield.data.TextFieldConfig
+
+/**
+ * @sample LoginTextFieldConfig 登入頁面使用者輸入框
+ *
+ * @param leadingIcon 標題icon
+ * @param title 標題
+ * @param dividerColor 分隔線顏色
+ * @param text 使用者輸入
+ * @param hint 尚未輸入前的提示字元
+ */
+
+data class LoginTextFieldConfig(
+    val leadingIcon: @Composable (() -> Unit)? = null,
+    val title: PocketTextConfig = PocketTextConfig(
+        value = "標題"
+    ),
+    val dividerColor : Color = Color.White,
+    val text: TextFieldConfig = TextFieldConfig(),
+    val hint: PocketTextConfig = PocketTextConfig()
+)
+
 
 /**
  *  @sample LoginTextField 使用者輸入元件
@@ -44,7 +63,6 @@ import com.pocketsecurities.pocketcomposecomponent.component.textfield.data.Text
  *  @param onTextChange export 最新輸入
  *  @param onFocusChange export 焦點變化
  */
-
 @Composable
 fun LoginTextField(
     modifier: Modifier = Modifier,
@@ -141,25 +159,4 @@ fun LoginTextField(
         }
 
     }
-}
-
-@Preview
-@Composable
-private fun LoginTextFieldPreview() {
-    LoginTextField(
-        loginTextFieldConfig = LoginTextFieldConfig(
-            text = TextFieldConfig(
-                value = "BTC TO THE MOON"
-            ),
-            hint = PocketTextConfig(
-                value = "ADA FOREVER"
-            ),
-        ),
-        onTextChange = {
-
-        },
-        onFocusChange = {
-
-        }
-    )
 }

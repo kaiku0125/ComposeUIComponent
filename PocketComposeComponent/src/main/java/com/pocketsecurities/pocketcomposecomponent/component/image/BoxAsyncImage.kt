@@ -140,14 +140,3 @@ private fun BoxAsyncImageLoadingScene(
         CircularLoadingScene()
     }
 }
-
-@Preview
-@Composable
-private fun BoxAsyncImagePreview() {
-    BoxAsyncImage(
-        modifier = Modifier,
-        viewConfig = BoxAsyncImageConfig(
-            errorDrawable = R.drawable.preview_ic_information
-        )
-    )
-}

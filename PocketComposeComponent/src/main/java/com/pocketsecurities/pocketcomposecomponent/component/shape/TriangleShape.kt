@@ -1,4 +1,4 @@
-package com.cmoney.pocket_order_ui.view.customcompose.shape
+package com.pocketsecurities.pocketcomposecomponent.component.shape
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline

@@ -75,22 +75,3 @@ fun PocketTextWithHint(
     }
 
 }
-
-@Preview
-@Composable
-private fun PocketTextWithHintPreview() {
-    PocketTextWithHint(
-        modifier = Modifier,
-        contentConfig = PocketTextConfig(
-            value = "內容",
-            alignment = Alignment.CenterStart,
-            textColor = Color.White
-        ),
-        hintConfig = PocketTextConfig(
-            value = "提示",
-            alignment = Alignment.CenterStart,
-            textColor = Color.LightGray
-        ),
-        paddingToContent = 0.dp
-    )
-}

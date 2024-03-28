@@ -14,9 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -87,7 +87,8 @@ fun PocketIconButton(
                 onClick = {
                     onIconClick.invoke()
                 }
-            )
+            ),
+        contentAlignment = Alignment.Center
     ) {
         Icon(
             modifier = iconModifier.size(iconSize),
@@ -99,7 +100,7 @@ fun PocketIconButton(
 }
 
 @Composable
-fun SimpleRotationIconButton(
+fun PocketRotationIconButton(
     modifier: Modifier = Modifier,
     imageVector: ImageVector = Icons.Default.KeyboardArrowDown,
     @DrawableRes imageResource: Int? = null,
@@ -155,18 +156,4 @@ fun SimpleRotationIconButton(
             onIconClick = onIconClick
         )
     }
-}
-
-@Preview
-@Composable
-private fun PocketIconButtonPreview() {
-    PocketIconButton(
-        modifier = Modifier.size(24.dp),
-        imageVector = Icons.Default.KeyboardArrowDown,
-        tint = Color.White,
-        iconSize = 17.dp,
-        onIconClick = {
-
-        }
-    )
 }

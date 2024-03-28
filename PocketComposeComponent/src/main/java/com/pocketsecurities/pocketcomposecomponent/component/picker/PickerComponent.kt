@@ -19,10 +19,10 @@ fun PickerComponent(
         it.toString()
     },
     value: Int,
-    onValueChange: (Int) -> Unit,
     dividersColor: Color = color_717071,
     range: Iterable<Int>,
     textStyle: TextStyle = LocalTextStyle.current,
+    onValueChange: (Int) -> Unit,
 ) {
     ListItemPicker(
         modifier = modifier,
@@ -34,19 +34,3 @@ fun PickerComponent(
         textStyle = textStyle
     )
 }
-
-
-@Preview
-@Composable
-private fun NumberPickerPreview() {
-    var state by remember { mutableStateOf(0) }
-    PickerComponent(
-        value = state,
-        range = -10..10,
-        onValueChange = {
-            state = it
-        },
-        textStyle = TextStyle(Color.White)
-    )
-}
-

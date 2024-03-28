@@ -62,16 +62,3 @@ fun PocketPrimaryButton(
         )
     }
 }
-
-@Preview
-@Composable
-private fun PocketPrimaryButtonPreview() {
-    PocketPrimaryButton(
-        config = PocketTextConfig(
-            value = "口袋證券"
-        ),
-        onClick = {
-
-        }
-    )
-}

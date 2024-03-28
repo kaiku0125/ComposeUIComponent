@@ -11,11 +11,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
+import com.pocketsecurities.composeuidemo.preview.spinner.SpinnerPreviewType
 import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
 import com.pocketsecurities.pocketcomposecomponent.component.image.BoxAsyncImage
 import com.pocketsecurities.pocketcomposecomponent.component.image.BoxAsyncImageConfig
@@ -23,8 +29,8 @@ import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
 import com.pocketsecurities.pocketcomposecomponent.R
 import com.pocketsecurities.pocketcomposecomponent.color_333333
-import com.pocketsecurities.pocketcomposecomponent.component.button.PocketPrimaryButton
-import com.pocketsecurities.pocketcomposecomponent.component.shadow.WithShadow
+import com.pocketsecurities.pocketcomposecomponent.component.spinner.PocketSpinnerComponent
+import com.pocketsecurities.pocketcomposecomponent.component.spinner.SpinnerType
 import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketAppBarWithBackNavigation
 
 class MainActivity : ComponentActivity() {
@@ -68,6 +74,23 @@ private fun MainActivityContent() {
                     url = "myUrl",
                     errorDrawable = R.drawable.preview_ic_information
                 )
+            )
+
+            var currentType by remember {
+                mutableStateOf<SpinnerType>(SpinnerPreviewType.SPOT)
+            }
+
+            PocketSpinnerComponent(
+                modifier = Modifier,
+                list = SpinnerPreviewType.getAll(),
+                itemHeight = 30.dp,
+                chosenTextConfig = PocketTextConfig(
+                    value = stringResource(id = currentType.description),
+                    style = TextStyle.Default
+                ),
+                onTypeChange = {
+                    currentType = SpinnerPreviewType.find(it.position)
+                }
             )
         }
     }

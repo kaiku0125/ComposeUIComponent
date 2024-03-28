@@ -52,6 +52,7 @@ import com.pocketsecurities.pocketcomposecomponent.color_484848
 import com.pocketsecurities.pocketcomposecomponent.color_9e9e9f
 import com.pocketsecurities.pocketcomposecomponent.component.tab.data.TabType
 import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.pocketcomposecomponent.extension.clipByShape
 import com.pocketsecurities.pocketcomposecomponent.extension.ratioHeight
 import kotlinx.coroutines.launch
 
@@ -100,9 +101,11 @@ fun TabRowDividerComponent(
 
     Box(
         modifier = modifier
-            .clip(shape)
-            .background(componentBackground)
-            .border(border = border, shape = shape)
+            .clipByShape(
+                shape = shape,
+                backgroundColor = componentBackground,
+                border = border
+            )
             .height(intrinsicSize = IntrinsicSize.Min)
     ) {
         TabIndicator(
@@ -254,83 +257,6 @@ fun MaxWidthTabRowDividerComponent(
 
                 }
             }
-        }
-    }
-}
-
-@Preview
-@Composable
-private fun MaxWidthTabRowDividerComponentPreview() {
-    var selectedItemIndex by remember { mutableIntStateOf(0) }
-
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        TabRowDividerComponent(
-            selectedItemIndex = selectedItemIndex,
-            items = CryptoTabType.getAll(),
-            tabWidth = 100.dp,
-            tabHeight = 50.dp,
-            indicatorColor = color_484848,
-            indicatorPadding = 5.dp,
-            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
-            selectedTextColor = Color.White,
-            unselectedTextColor = color_9e9e9f,
-            onClick = {
-                selectedItemIndex = it.position
-            }
-        )
-
-        MaxWidthTabRowDividerComponent(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 10.dp, horizontal = 20.dp),
-            selectedItemIndex = selectedItemIndex,
-            items = CryptoTabType.getAll(),
-            tabHeight = 40.dp,
-            indicatorColor = color_484848,
-            indicatorPadding = 2.dp,
-            border = BorderStroke(1.dp, color_333333),
-            selectedTextColor = Color.White,
-            unselectedTextColor = color_9e9e9f,
-            onClick = {
-                selectedItemIndex = it.position
-            }
-        )
-    }
-
-}
-
-internal sealed class CryptoTabType(
-    override val position: Int,
-    @StringRes override val description: Int,
-    override val tag: String,
-) : TabType {
-
-    data object SpotTab : CryptoTabType(
-        position = 0,
-        description = R.string.tab_spot,
-        tag = "現貨",
-    )
-
-    data object PerpetualTab : CryptoTabType(
-        position = 1,
-        description = R.string.tab_perpetual,
-        tag = "合約",
-    )
-
-    data object GridBotTab : CryptoTabType(
-        position = 2,
-        description = R.string.tab_grid,
-        tag = "網格機器人",
-    )
-
-    companion object {
-
-        fun getAll(): List<CryptoTabType> {
-            return listOf(
-                SpotTab,
-                PerpetualTab,
-                GridBotTab
-            )
         }
     }
 }

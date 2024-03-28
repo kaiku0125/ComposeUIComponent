@@ -178,33 +178,3 @@ fun PocketComposeDialog(
         }
     }
 }
-
-@Composable
-@Preview
-fun PreviewBaseDialog() {
-    PocketComposeDialog(
-        title = "我是標題",
-        contentMessage = "嗨\n我是第一行\n充數第二行"
-    )
-}
-
-@Composable
-@Preview
-fun PreviewOneButtonDialog() {
-    PocketComposeDialog(
-        title = "我是標題",
-        contentMessage = "嗨\n我是第一行\n充數第二行",
-        positiveText = "我知道辣",
-        negativeText = null
-    )
-}
-
-@Composable
-@Preview
-fun PreviewTitleMessageDialog() {
-    PocketComposeDialog(
-        contentMessage = "嗨\n我是第一行\n充數第二行",
-        positiveText = null,
-        negativeText = null
-    )
-}

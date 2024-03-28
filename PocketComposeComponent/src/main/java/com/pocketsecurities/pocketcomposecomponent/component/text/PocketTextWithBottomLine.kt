@@ -39,13 +39,3 @@ fun PocketTextWithBottomLine(
         config = config
     )
 }
-
-@Preview
-@Composable
-private fun SimpleTextWithBottomLinePreview() {
-    PocketTextWithBottomLine(
-        config = PocketTextConfig(
-            value = "54879487"
-        )
-    )
-}

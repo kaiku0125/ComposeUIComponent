@@ -2,7 +2,9 @@ package com.pocketsecurities.pocketcomposecomponent.extension
 
 import android.annotation.SuppressLint
 import android.graphics.BlurMaskFilter
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.height
@@ -28,6 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.pocketsecurities.pocketcomposecomponent.color_414141
 
 /**
  * @sample ClickableConfig 點擊compose設定
@@ -36,7 +39,6 @@ import androidx.compose.ui.unit.dp
  * @param needSound 是否需要音效
  * @param needHaptic 是否需要震動 (預設關閉)
  */
-
 data class ClickableConfig(
     val needRipple: Boolean = true,
     val needSound: Boolean = true,
@@ -50,7 +52,6 @@ data class ClickableConfig(
  * @param config 點擊設定
  * @param onClick export點擊事件
  */
-
 @SuppressLint("UnnecessaryComposedModifier")
 fun Modifier.clickableEffectConfig(
     config: ClickableConfig = ClickableConfig(),
@@ -64,7 +65,7 @@ fun Modifier.clickableEffectConfig(
         this.then(
             if (config.needRipple.not()) {
                 Modifier.clickable(
-                    interactionSource = remember{ MutableInteractionSource() } ,
+                    interactionSource = remember { MutableInteractionSource() },
                     indication = null,
                     onClick = {
                         onClick.withEffect(
@@ -109,6 +110,30 @@ fun Modifier.toStyleOfDigitalKeyBoard(
         .clip(shape)
 }
 
+
+/**
+ * @sample clipByShape 依照形狀裁切元件並設置背景
+ *
+ * @param shape 填入形狀
+ * @param backgroundColor 元件背景顏色
+ * @param border 外框顏色
+ */
+@SuppressLint("UnnecessaryComposedModifier")
+fun Modifier.clipByShape(
+    shape: Shape,
+    backgroundColor: Color = Color.Transparent,
+    border: BorderStroke = BorderStroke(0.dp, Color.Transparent)
+) = composed(
+    factory = {
+        this.then(
+            Modifier
+                .clip(shape)
+                .background(backgroundColor, shape)
+                .border(border, shape)
+        )
+    }
+)
+
 /**
  * @sample ratioHeight 自定義依照手機螢幕調整適當元件高度比例
  *
@@ -149,7 +174,7 @@ fun Modifier.ratioHeight(
  */
 fun Modifier.screenHeight(
     ratio: Float
-)= composed(
+) = composed(
     factory = {
         val configuration = LocalConfiguration.current
 

@@ -32,7 +32,7 @@ import kotlin.math.abs
 /**
  * @sample CircularPercentageConfig
  *
- * @property percentage 百分比
+ * @property percentage 百分比 (%數)
  * @property number 總數
  * @property radius 半徑
  * @property strokeColor 圓圈顏色
@@ -85,14 +85,14 @@ fun CircularPercentageComponent(
             if (absPercentage > 100) {
                 1f
             } else {
-                absPercentage / config.number
+                absPercentage
             }
         }
 
     }
 
     val circularPercentageProgress = animateFloatAsState(
-        targetValue = if (animationPlayed) circularPercentage else 0f,
+        targetValue = if (animationPlayed) circularPercentage * config.number else 0f,
         animationSpec = config.animationSpec,
         label = ""
     )
@@ -143,22 +143,3 @@ fun CircularPercentageComponent(
     }
 }
 
-@Preview
-@Composable
-private fun CircularPercentageComponentPreview() {
-    CircularPercentageComponent(
-        modifier = Modifier.padding(10.dp),
-        config = CircularPercentageConfig(
-            radius = 50.dp,
-            percentage = 0.8f,
-            bg = color_9e9e9f
-        ),
-        centerContent = {
-            PocketText(
-                config = PocketTextConfig(
-                    value = "87%",
-                )
-            )
-        }
-    )
-}

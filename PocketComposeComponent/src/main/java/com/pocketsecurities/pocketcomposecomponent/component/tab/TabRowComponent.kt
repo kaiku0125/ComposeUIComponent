@@ -176,34 +176,3 @@ fun MaxWidthTabRowComponent(
 
 
 }
-
-@Preview
-@Composable
-private fun CustomTabFillMaxWidthPreview() {
-
-    var index by remember { mutableIntStateOf(0) }
-
-    MaxWidthTabRowComponent(
-        modifier = Modifier.fillMaxWidth().height(50.dp),
-        selectedItemIndex = index,
-        items = listOf("一般單", "觸價單"),
-        onClick = {
-            index = it
-        }
-    )
-}
-
-@Preview
-@Composable
-private fun PocketTabPreview() {
-
-    var index by remember { mutableIntStateOf(0) }
-
-    TabRowComponent(
-        modifier = Modifier.height(45.dp),
-        selectedItemIndex = index,
-        items = listOf("一般單", "觸價單")
-    ) {
-        index = it
-    }
-}

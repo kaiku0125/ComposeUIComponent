@@ -53,12 +53,3 @@ private fun DotItem(isSelected: Boolean) {
         }
     )
 }
-
-@Preview
-@Composable
-private fun PagerDotComponentPreview() {
-    PagerDotComponent(
-        currentPage = 1,
-        pageSize = 3
-    )
-}

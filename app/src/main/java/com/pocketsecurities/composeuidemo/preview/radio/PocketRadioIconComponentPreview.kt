@@ -9,7 +9,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.radio.PocketRadioIconComponent
+import com.pocketsecurities.composecomponent.component.radio.PocketRadioIconComponent
 
 @PreviewLightDark
 @Composable

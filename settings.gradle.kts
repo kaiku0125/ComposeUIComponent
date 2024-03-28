@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposeUIDemo"
 include(":app")
-include(":PocketComposeComponent")
+include(":ComposeComponent")

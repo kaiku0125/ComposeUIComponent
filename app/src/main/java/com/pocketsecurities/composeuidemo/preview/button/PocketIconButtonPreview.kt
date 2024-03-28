@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.button.PocketIconButton
+import com.pocketsecurities.composecomponent.component.button.PocketIconButton
 
 @Preview
 @Composable

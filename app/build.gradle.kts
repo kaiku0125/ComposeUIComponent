@@ -82,7 +82,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // SDK載入
-    implementation(project(":PocketComposeComponent"))
+    implementation(project(":ComposeComponent"))
 
     // OkHttp
     implementation ("com.squareup.okhttp3:okhttp:3.12.11")

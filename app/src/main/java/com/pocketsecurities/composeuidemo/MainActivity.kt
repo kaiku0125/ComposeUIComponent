@@ -23,15 +23,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.composeuidemo.preview.spinner.SpinnerPreviewType
 import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.image.BoxAsyncImage
-import com.pocketsecurities.pocketcomposecomponent.component.image.BoxAsyncImageConfig
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
-import com.pocketsecurities.pocketcomposecomponent.R
-import com.pocketsecurities.pocketcomposecomponent.color_333333
-import com.pocketsecurities.pocketcomposecomponent.component.spinner.PocketSpinnerComponent
-import com.pocketsecurities.pocketcomposecomponent.component.spinner.SpinnerType
-import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketAppBarWithBackNavigation
+import com.pocketsecurities.composecomponent.component.image.BoxAsyncImage
+import com.pocketsecurities.composecomponent.component.image.BoxAsyncImageConfig
+import com.pocketsecurities.composecomponent.component.text.PocketText
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.R
+import com.pocketsecurities.composecomponent.color_333333
+import com.pocketsecurities.composecomponent.component.spinner.PocketSpinnerComponent
+import com.pocketsecurities.composecomponent.component.spinner.SpinnerType
+import com.pocketsecurities.composecomponent.component.topbar.PocketAppBarWithBackNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

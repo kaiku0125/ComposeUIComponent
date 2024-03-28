@@ -6,10 +6,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.pocketsecurities.pocketcomposecomponent.component.bottomsheet.BottomSheetSceneComponent
-import com.pocketsecurities.pocketcomposecomponent.component.bottomsheet.BottomSheetSceneConfig
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.bottomsheet.BottomSheetSceneComponent
+import com.pocketsecurities.composecomponent.component.bottomsheet.BottomSheetSceneConfig
+import com.pocketsecurities.composecomponent.component.text.PocketText
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
 
 @Preview
 @Composable

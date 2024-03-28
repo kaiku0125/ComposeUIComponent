@@ -3,8 +3,8 @@ package com.pocketsecurities.composeuidemo.preview.button
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.button.PocketPrimaryButton
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.button.PocketPrimaryButton
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
 
 @Preview
 @Composable

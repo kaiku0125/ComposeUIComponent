@@ -5,11 +5,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.pocketsecurities.pocketcomposecomponent.R
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
-import com.pocketsecurities.pocketcomposecomponent.component.text.TextWithIcon
-import com.pocketsecurities.pocketcomposecomponent.component.text.TextWithIconConfig
+import com.pocketsecurities.composecomponent.R
+import com.pocketsecurities.composecomponent.component.text.PocketText
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.text.TextWithIcon
+import com.pocketsecurities.composecomponent.component.text.TextWithIconConfig
 
 @Preview
 @Composable

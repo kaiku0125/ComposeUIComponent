@@ -3,9 +3,9 @@ package com.pocketsecurities.composeuidemo.preview.checkbox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
-import com.pocketsecurities.pocketcomposecomponent.component.checkboxfield.CheckBoxFieldComponent
-import com.pocketsecurities.pocketcomposecomponent.component.checkboxfield.CheckBoxFieldConfig
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.checkboxfield.CheckBoxFieldComponent
+import com.pocketsecurities.composecomponent.component.checkboxfield.CheckBoxFieldConfig
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
 
 @Preview
 @Composable

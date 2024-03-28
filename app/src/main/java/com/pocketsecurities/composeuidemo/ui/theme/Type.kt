@@ -6,7 +6,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.pocketsecurities.pocketcomposecomponent.color_717071
+import com.pocketsecurities.composecomponent.color_717071
 
 val Typography = Typography(
     bodyMedium = TextStyle(

@@ -13,9 +13,9 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
 import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.radio.LeadingRadioSelectedComponent
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.radio.LeadingRadioSelectedComponent
+import com.pocketsecurities.composecomponent.component.text.PocketText
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
 
 @PreviewLightDark
 @Composable

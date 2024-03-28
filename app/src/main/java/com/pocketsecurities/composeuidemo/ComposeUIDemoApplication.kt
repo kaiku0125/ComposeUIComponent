@@ -1,8 +1,8 @@
 package com.pocketsecurities.composeuidemo
 
 import android.app.Application
-import com.pocketsecurities.pocketcomposecomponent.di.getComposeImageLoaderModule
-import com.pocketsecurities.pocketcomposecomponent.di.getDrawableProviderModule
+import com.pocketsecurities.composecomponent.di.getComposeImageLoaderModule
+import com.pocketsecurities.composecomponent.di.getDrawableProviderModule
 import org.koin.android.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules

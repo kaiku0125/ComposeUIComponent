@@ -2,7 +2,7 @@ package com.pocketsecurities.composeuidemo.preview.pager
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.pocketsecurities.pocketcomposecomponent.component.pager.PagerDotComponent
+import com.pocketsecurities.composecomponent.component.pager.PagerDotComponent
 
 @Preview
 @Composable

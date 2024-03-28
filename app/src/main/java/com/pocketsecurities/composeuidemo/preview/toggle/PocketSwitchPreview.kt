@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.toggle.PocketSwitch
+import com.pocketsecurities.composecomponent.component.toggle.PocketSwitch
 
 @Preview
 @Composable

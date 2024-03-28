@@ -11,10 +11,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
 import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
-import com.pocketsecurities.pocketcomposecomponent.component.topbar.BaseTopBarComponent
-import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketAppBarWithBackNavigation
-import com.pocketsecurities.pocketcomposecomponent.component.topbar.PocketTopBarConfig
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.component.topbar.BaseTopBarComponent
+import com.pocketsecurities.composecomponent.component.topbar.PocketAppBarWithBackNavigation
+import com.pocketsecurities.composecomponent.component.topbar.PocketTopBarConfig
 
 @Preview
 @Composable

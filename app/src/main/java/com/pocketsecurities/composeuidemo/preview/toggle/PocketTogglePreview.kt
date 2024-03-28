@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.pocketsecurities.composeuidemo.ui.theme.ComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.component.toggle.PocketToggle
-import com.pocketsecurities.pocketcomposecomponent.component.toggle.PocketToggleConfig
+import com.pocketsecurities.composecomponent.component.toggle.PocketToggle
+import com.pocketsecurities.composecomponent.component.toggle.PocketToggleConfig
 
 
 @Preview

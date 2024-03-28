@@ -1,12 +1,10 @@
 package com.pocketsecurities.composeuidemo.preview.spinner
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,11 +18,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pocketsecurities.composeuidemo.ui.theme.DarkComposeUIDemoTheme
-import com.pocketsecurities.pocketcomposecomponent.R
-import com.pocketsecurities.pocketcomposecomponent.component.spinner.PocketSpinnerComponent
-import com.pocketsecurities.pocketcomposecomponent.component.spinner.SpinnerType
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketText
-import com.pocketsecurities.pocketcomposecomponent.component.text.PocketTextConfig
+import com.pocketsecurities.composecomponent.R
+import com.pocketsecurities.composecomponent.component.spinner.PocketSpinnerComponent
+import com.pocketsecurities.composecomponent.component.spinner.SpinnerType
+import com.pocketsecurities.composecomponent.component.text.PocketText
+import com.pocketsecurities.composecomponent.component.text.PocketTextConfig
 
 @Preview
 @Composable
